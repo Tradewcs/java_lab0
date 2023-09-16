@@ -3,7 +3,9 @@ package lab0;
 public class Variant11 {
 
     public static void main(String[] args) {
-        System.out.println(stringTask("wasd"));
+        System.out.println(whileTask(4));
+        System.out.println(whileTask(2));
+        System.out.println(whileTask(10));
     }
 
     /**
@@ -152,6 +154,14 @@ public class Variant11 {
     }
 
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @param c
+     * @param d
+     * @return array {min, max} from a, b, c, d
+     */
     public static int[] functionTask(int a, int b, int c, int d) {
         int[] arr = minMax(a, b);
         a = arr[0]; b = arr[1];
@@ -168,6 +178,12 @@ public class Variant11 {
         return new int[] {a, d};
     }
 
+    /**
+     *
+     * @param x
+     * @param y
+     * @return array {min, max} from x, y
+     */
     public static int[] minMax(int x, int y) {
         if (x > y) {
             int tmp = x;
@@ -178,6 +194,11 @@ public class Variant11 {
         return new int[] {x, y};
     }
 
+    /**
+     *
+     * @param arr
+     * @return index of last extremal (min or max) element in arr
+     */
     public static int minMaxTask(int[] arr) {
         int minIndex = 0;
         int maxIndex = 0;
@@ -193,18 +214,29 @@ public class Variant11 {
         return Math.max(minIndex, maxIndex);
     }
 
-    public static int[] arrayTask(int[] a, int k) {
-        int[] nums = new int[a.length / k];
+    /**
+     *
+     * @param arr array of integers
+     * @param k
+     * @return array from that elements of a which indexes are multiples of k
+     */
+    public static int[] arrayTask(int[] arr, int k) {
+        int[] nums = new int[arr.length / k];
 
         int j = 0;
-        for (int i = k - 1; i < a.length; i += k) {
-            nums[j] = a[i];
+        for (int i = k - 1; i < arr.length; i += k) {
+            nums[j] = arr[i];
             j++;
         }
 
         return nums;
     }
 
+    /**
+     *
+     * @param arr
+     * @return array of elements in snake-like order
+     */
     public static int[]  twoDimensionArrayTask(int[][] arr) {
         int[] res = new int[arr.length * arr[0].length];
         int k = 0;
@@ -226,10 +258,15 @@ public class Variant11 {
         return res;
     }
 
-    public static String stringTask(String s) {
+    /**
+     *
+     * @param str
+     * @return string with spaces between each character of str
+     */
+    public static String stringTask(String str) {
         StringBuilder sb = new StringBuilder();
 
-        for (String c : s.split("")) {
+        for (String c : str.split("")) {
             sb.append(c);
             sb.append(" ");
         }
