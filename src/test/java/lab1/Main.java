@@ -7,8 +7,8 @@ public class Main {
         root.addFile(new FileEntry("file2", 555));
         root.addFile(new DirectoryEntry(root, "dir1"));
         root.addFile(new DirectoryEntry(root, "dir2"));
-        DirectoryEntry de = new DirectoryEntry(root.getDirectory("dir1"), "dir1.dir_");
-        root.getDirectory("dir1").addFile(de);
+        DirectoryEntry de = new DirectoryEntry(root.getSubDirectory("dir1"), "dir1.dir_");
+        root.getSubDirectory("dir1").addFile(de);
 
         
         Explorer explorer = new Explorer(root);

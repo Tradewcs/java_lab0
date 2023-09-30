@@ -1,29 +1,26 @@
 package lab1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Explorer {
-    public DirectoryEntry currentDirectory;
+    private DirectoryEntry currentDirectory;
 
     public Explorer(DirectoryEntry de) {
         this.currentDirectory = de;
     }
 
-    public String[] directoriesList() {
-        Object[] directories = currentDirectory.getDirectories();
-        String[] stringDirectories = new String[directories.length];
-
-        int i = 0;
-        for (Object str : directories) {
-            stringDirectories[i] = (String) str;
-            i++;
-        }
-
-        return stringDirectories;
-    }
-
+    /***
+     *
+     * @param name name of directory to be entered
+     */
     public void enterDirectory(String name) {
-        currentDirectory = currentDirectory.getDirectory(name);
+        currentDirectory = currentDirectory.getSubDirectory(name);
     }
 
+    /***
+     * move to the parent directory
+     */
     public void upDirectory() {
         if (currentDirectory.getParent() != null) {
             currentDirectory = currentDirectory.getParent();
