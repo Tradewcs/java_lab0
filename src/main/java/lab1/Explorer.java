@@ -1,8 +1,5 @@
 package lab1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Explorer {
     private DirectoryEntry currentDirectory;
 
