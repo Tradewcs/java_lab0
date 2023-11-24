@@ -15,8 +15,7 @@ public class Main {
         explorer.enterDirectory("dir1");
         explorer.upDirectory();
 
-        for (String s : explorer.directoriesList()) {
-            System.out.println(s);
-        }
+
+
     }
 }

@@ -10,7 +10,6 @@ public class FileEntry {
     private LocalDate updated;
     private Mod mod;
 
-
     public FileEntry(String name, long size) {
         this.name = name;
         this.size = size;
